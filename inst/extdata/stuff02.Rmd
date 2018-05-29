@@ -1,0 +1,76 @@
+---
+title: "Stuff 02"
+author: "Keith Baggerly"
+date: "`r Sys.Date()`"
+output: 
+  word_document: 
+    reference_docx: "ref01.docx"
+  html_document: default
+---
+
+# Stuff here
+
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  

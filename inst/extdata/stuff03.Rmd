@@ -1,0 +1,76 @@
+---
+title: "Stuff 03"
+author: "Keith Baggerly"
+date: "`r Sys.Date()`"
+output: 
+  word_document: 
+    reference_docx: !expr system.file("extdata", "ref01.docx", package = "enar2018pkg")
+  html_document: default
+---
+
+# Stuff here
+
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
+stuff stuff stuff stuff stuff stuff stuff  
