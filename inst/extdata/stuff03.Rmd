@@ -4,7 +4,7 @@ author: "Keith Baggerly"
 date: "`r Sys.Date()`"
 output: 
   word_document: 
-    reference_docx: !expr system.file("extdata", "ref01.docx", package = "enar2018pkg")
+    reference_docx: !expr system.file("extdata", "ref01.docx", package = "moffitt2018")
   html_document: default
 ---
 

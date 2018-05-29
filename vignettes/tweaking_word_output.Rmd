@@ -1,0 +1,193 @@
+---
+title: "Tweaking Word Output and Including Data in Packages"
+author: "Keith Baggerly"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Tweaking Word Output}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+I write most of my reports using rmarkdown. When these
+reports are ready to share with collaborators, I also
+often generate output files in several formats (e.g., 
+pdf, docx), (a) because rmarkdown makes this easy to do,
+and (b) many of my collaborators prefer one format over
+another. Once we're working with a given output format, 
+however, it occasionally behooves us to consider aesthetic
+issues which affect the "look and feel" of the final 
+report in addition to the reproducibility of the analyses. 
+
+**How can we automatically generate MS Word (docx) files
+that look more like what we're used to (or exhibit
+certain behaviors)?** This issue is discussed in a few 
+posts from RStudio, but I wanted to add my own two cents.
+
+https://rmarkdown.rstudio.com/word_document_format.html
+
+https://rmarkdown.rstudio.com/articles_docx.html
+
+The rmarkdown package produces docx files essentially
+by running markdown through "pandoc", which is a general
+purpose tool for translating input in one format into 
+output in another format. With some types of output
+(e.g., pdf) we can tweak the look and feel of the final
+product by using the YAML header to pass various key:value
+pairs to pandoc. This isn't the case with docx files, 
+however, since their underlying format is binary. If you
+want a new docx file to have certain properties, you 
+need to supply a "reference style" docx file with those
+properties which pandoc can use as a template. 
+
+Let's work through an example. 
+
+As will be discussed more below, the files discussed
+here can be found in the folder specified by 
+
+```
+system.file("extdata", "ref01.docx", package = "moffitt2018")
+```
+
+I've generated a toy file, "stuff01.Rmd", whose content
+is meaningless but long enough so the docx file produced
+by running it through rmarkdown (stuff01.docx) 
+is more than a page. While the default output formatting
+isn't bad, there's at least one problem (from my viewpoint):
+*the pages aren't numbered*. 
+
+Fixing this requires working with the document in Word,
+and as such is subject to a major caveat: as of right 
+now, I don't know how to script this process. I just 
+know how to do it and describe it. 
+
+First, we start with a docx file which we know pandoc
+can produce (stuff01.docx, produced above) as our 
+"null" reference format, make a copy, tweak the copy
+to add a feature we want, and then generate new output
+using the modified copy (ref01.docx) as our new 
+reference. We do this by editing the YAML for the
+word document from 
+
+```
+output:
+  word_document: default
+  html_document: default
+```
+
+to
+
+```
+output:
+  word_document:
+    reference_docx: ref01.docx
+  html_document: default
+```
+
+On my Mac Laptop, I edited ref01 first by selecting 
+"View/Header and Footer". This starts me in the Header
+by default. Let's say for now, however, that I want the
+pages to be numbered in the bottom right. Then I first
+choose the "Go to Footer" icon from the toolbar 
+displayed (moving things to the bottom), and then
+selecting "Page Number/Page Numbers"
+which asks me where I want the numbers aligned 
+relative to the x-axis of the page
+(I chose "Alignment: Right"). Having made this one
+(incremental) change, I close the header/footer
+editing pane and save the edited docx file.
+
+I then copy stuff01.Rmd to stuff02.Rmd, edit
+the YAML as noted above, and generate a new
+docx file (stuff02.docx). This docx file has
+page numbers!
+
+This process of incremental editing to generate
+working docx reference files is described in more
+detail in the second of the RStudio posts linked
+to above. 
+
+While this works, I'm not happy with it yet.
+The stuff02 version requires me to either 
+generate a new reference file every single 
+time, copy the reference file to every project
+I want to use it in, or specify the path to 
+where the reference file resides (and I don't 
+want to do this in a way that's unique to my
+file system).
+
+One way to fix this positioning problem is
+to store the reference file as "external data".
+Including data in R packages is discussed
+in Hadley Wickham's _R Packages_ book,
+
+http://r-pkgs.had.co.nz/data.html
+
+where he notes 
+"If you want to store raw data, put it in `inst/extdata`".
+
+Raw data isn't parsed by R directly. Rather,
+when an R package is "installed", everything in "inst"
+is moved to the top level of the folder for that package
+on your machine (i.e., `inst/extdata` gets moved to `extdata`).
+At this point, the reference file can be located 
+relative to the package using `system.file`, e.g.,
+
+```
+output:
+  word_document:
+    reference_docx: !expr system.file("extdata", "ref01.docx", package = "moffitt2018")
+  html_document: default
+```
+
+The "!expr" notation is new; it's there because there isn't
+currently a standard way to handle evaluation of R calls 
+within the YAML header. With date, a simple inline R 
+call (using backtick-r) works just fine to invoke `Sys.Date()`, 
+but if I try something like that here I currently get an 
+error from pandoc. 
+
+The issue of invoking `Sys.date` from YAML was discussed
+a few years ago on StackOverflow
+
+https://stackoverflow.com/questions/23449319/yaml-current-date-in-rmarkdown
+
+where Yihue Xie suggested the "!expr" workaround in a comment
+on the first post and then suggested a better fix later in the 
+thread. 
+
+More recently, there's been some discussion of the point
+that there doesn't appear to be one solution that works 
+for all YAML fields
+
+https://stackoverflow.com/questions/32637340/inline-r-code-in-yaml-for-rmarkdown-doesnt-run
+
+but I don't see a clean resolution to this yet. 
+
+Just to make things more fun, when I run the working version
+of stuff03 today, I get the warning that 
+
+> 1: In yaml::yaml.load(string, ...) :
+  R expressions in yaml.load will not be auto-evaluated by default in the near future
+
+so this issue is in flux even now, and we'll likely need
+a different solution in a few months. Sigh.
+
+There's one more issue. 
+
+While adding ref01.docx to inst/extdata in our package
+lets the file be used, it doesn't necessarily let someone
+who's new to the package find it very readily because it
+doesn't make use of any of the package specific functions. 
+
+We can tell people about this resource by adding a vignette
+to the package explaining what's going on, and also possibly
+including stuff01, 02, and 03 in extdata as well. 
+
+Creating vignettes (e.g., with `use_vignette`) is discussed
+in Hadley's *R Packages* book
+
+http://r-pkgs.had.co.nz/vignettes.html
+
+I've done this in our package, so this is now fairly
+self-referential!
