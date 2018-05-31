@@ -1,0 +1,28 @@
+---
+title: "Untitled"
+author: "Keith Baggerly"
+date: "`r Sys.Date()"
+output: 
+  github_document:
+    toc: true
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    fig_caption: true
+---
+
+# Overview
+
+# Load Libraries and Data
+
+## Libraries
+
+```{r load_libs}
+
+```
+
+## Data
+
+# Analysis
