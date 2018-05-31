@@ -8,7 +8,7 @@
 #'   contents are to be deleted (recursively).
 #' @return adds 95_make_clean.R to R/ if this doesn't
 #'   already exist.
-#' @import here::here
+#' @import here
 #' @export
 add_make_clean <- function(delete_folder_list = c("results", "data")){
 

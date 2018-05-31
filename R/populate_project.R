@@ -10,7 +10,7 @@
 #'   to the working project if these don't already exist.
 #' @examples
 #' populate_project()
-#' @import here::here
+#' @import here
 #' @export
 populate_project <- function(folder_list = c("R", "data", "results")){
   for(i1 in 1:length(folder_list)){

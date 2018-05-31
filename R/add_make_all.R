@@ -7,7 +7,7 @@
 #'
 #' @return adds 99_make_all.R to R/ if this doesn't
 #'   already exist.
-#' @import here::here
+#' @import here
 #' @export
 add_make_all <- function(){
 
