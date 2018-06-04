@@ -1,7 +1,7 @@
 ---
 title: "Untitled"
 author: "Keith Baggerly"
-date: "`r Sys.Date()"
+date: "`r Sys.Date()`"
 output: 
   github_document:
     toc: true
